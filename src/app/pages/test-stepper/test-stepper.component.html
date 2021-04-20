@@ -1,0 +1,11 @@
+<mat-horizontal-stepper (selectionChange)="selectStep($event)"  [linear]="true">
+    <mat-step [stepControl]="stepOne.firstFormGroup" label="Date wehlen" >
+        <app-first-step #step1></app-first-step>
+    </mat-step>
+    <mat-step [stepControl]="stepTwo.secondFormGroup" [label]=" (this.selectedDate$ | async) ? 'Zaitslot am ' + (this.selectedDate$ | async) +  ' wehlen' : '' ">
+       <app-second-step #step2></app-second-step>
+    </mat-step>
+    <mat-step [stepControl]="stepThree.thirdFormGroup" [label]="'Artikel wehlen'">
+        <app-third-step #step3></app-third-step>
+    </mat-step>
+</mat-horizontal-stepper>

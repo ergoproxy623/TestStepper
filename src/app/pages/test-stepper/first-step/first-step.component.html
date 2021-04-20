@@ -1,0 +1,23 @@
+<form class="d-flex flex-column" [formGroup]="firstFormGroup">
+    <ng-template matStepLabel>Datum wahlen</ng-template>
+    <div class="custom-wrap">
+        <mat-form-field class="col-12 p-0" appearance="fill">
+            <mat-label>Products</mat-label>
+            <mat-select [formControlName]="'productSelect'"  multiple>
+                <mat-option *ngFor="let product of [{id: 1, value: 'test'}]" [value]="product.id">{{product.value}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="custom-wrap">
+        <p-calendar
+                    [formControlName]="'date'"
+                    [inline]="true"></p-calendar>
+    </div>
+
+
+
+    <div class="col-12 d-flex justify-content-end">
+        <button mat-button matStepperNext (click)="nextStep()">Next</button>
+    </div>
+</form>

@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
+@include mat-core(); 
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$md-test: (
+    50 : #eae9f8,
+    100 : #cac8ef,
+    200 : #a7a4e4,
+    300 : #837fd9,
+    400 : #6963d0,
+    500 : #4e48c8,
+    600 : #4741c2,
+    700 : #3d38bb,
+    800 : #3530b4,
+    900 : #2521a7,
+    A100 : #e3e2ff,
+    A200 : #b1afff,
+    A400 : #7f7cff,
+    A700 : #6663ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+// mandatory stuff for theming
+$md-test-primary: mat-palette($md-test);
+$md-test-accent:  mat-palette($mat-blue);
+$md-test-warn:    mat-palette($mat-red);
+
+// include the custom theme components into a theme object
+$md-test-theme: mat-light-theme($md-test-primary, $md-test-accent, $md-test-warn);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($md-test-theme);

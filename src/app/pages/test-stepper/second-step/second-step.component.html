@@ -1,0 +1,10 @@
+<form [formGroup]="secondFormGroup">
+    <mat-form-field>
+        <mat-label>Time Slots</mat-label>
+        <input matInput placeholder="Slots" [formControlName]="'empty'">
+    </mat-form-field>
+    <div class=" col-12 d-flex justify-content-end ">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click)="nextStep()">Next</button>
+    </div>
+</form>
