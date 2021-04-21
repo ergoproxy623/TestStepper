@@ -24,6 +24,11 @@ export const isArticleListSelector = createSelector(
     (stepperState: StepperState) => stepperState?.articleList
 );
 
+export const isUserDataSelector = createSelector(
+    stepperStateSelector,
+    (stepperState: StepperState) => stepperState?.userData
+);
+
 
 export const isThirdStepStateSelector = createSelector(
     stepperStateSelector,

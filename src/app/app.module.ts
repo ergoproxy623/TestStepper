@@ -22,6 +22,7 @@ import {SecondStepComponent} from "./pages/test-stepper/second-step/second-step.
 import {ThirdStepComponent} from "./pages/test-stepper/therd-step/third-step.component";
 import {CalendarModule} from "primeng/calendar";
 import { PersonalInfoComponent } from './pages/personal-info/personal-info.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 
 
@@ -33,6 +34,7 @@ import { PersonalInfoComponent } from './pages/personal-info/personal-info.compo
         SecondStepComponent,
         ThirdStepComponent,
         PersonalInfoComponent,
+        SummaryComponent,
     ],
     imports: [
         BrowserModule,

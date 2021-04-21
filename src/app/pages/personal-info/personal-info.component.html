@@ -1,1 +1,36 @@
-<p>personal-info works!</p>
+<div class="d-flex flex-column justify-content-around align-items-center pt-4">
+    <form [formGroup]="userForm"  class="example-form d-flex flex-column col-5" (ngSubmit)="submitForm()">
+        <section class="example-section">
+            <mat-checkbox [formControlName]="'agree'" class="example-margin">Agree to pay</mat-checkbox>
+        </section>
+
+        <mat-radio-group [formControlName]="'adult'" aria-label="Select an option">
+            <mat-radio-button required [value]="true">18+</mat-radio-button>
+            <mat-radio-button [value]="false">18-</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput [formControlName]="'name'" placeholder="Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date of birth</mat-label>
+            <input matInput [formControlName]="'dob'" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea [formControlName]="'comment'" matInput placeholder="Comment"></textarea>
+        </mat-form-field>
+
+        <section>
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" type="submit" >Submit</button>
+            </div>
+        </section>
+    </form>
+
+</div>
